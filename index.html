@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剧本影子 - 剧本创作从未如此轻松</title>
+    <!-- 引入CSS文件 -->
+    <link rel="stylesheet" href="/style.css?v=1.5">
+</head>
+<body>
+    <div class="container">
+        <div id="home-page" class="active">
+            <h1 id="dynamic-title"></h1>
+            <div class="upload-area" id="upload-area">
+                <p>点击上传或拖拽文件到此处</p>
+                <input type="file" id="file-input" style="display: none;">
+            </div>
+            <table id="document-table">
+                <thead>
+                    <tr>
+                        <th class="document-name">文档名称</th>
+                        <th>上传时间</th>
+                        <th>剧本改写</th>
+                        <th>导出全文</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 文档列表将在这里动态生成 -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="rewrite-page">
+            <h1>剧本改写 - <span id="current-document"></span></h1>
+            <button onclick="showHomePage()">返回首页</button>
+            <div class="content-area">
+                <div class="section">
+                    <h2>故事大纲</h2>
+                    <textarea id="original-outline" placeholder="这里将显示生成的原文大纲..."></textarea>
+                    <button onclick="generateOriginalOutline()">生成原文大纲</button>
+                    <textarea id="rewritten-outline" placeholder="这里将显示改写后的大纲..."></textarea>
+                    <button onclick="rewriteOutline()">改写大纲</button>
+                </div>
+                <div class="section">
+                    <h2>人物小传</h2>
+                    <button onclick="generateCharacters()">生成人物小传</button>
+                    <div id="character-list"></div>
+                </div>
+                <div class="section">
+                    <h2>分集大纲</h2>
+                    <button onclick="generateEpisodeOutlines()">生成分集大纲</button>
+                    <div id="episode-outlines"></div>
+                </div>
+                <div class="section">
+                    <h2>正文</h2>
+                    <button onclick="generateFullText()">生成正文</button>
+                    <div id="full-text-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="/script.js?v=1.5"></script>
+</body>
+</html>
